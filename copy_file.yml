@@ -1,12 +1,20 @@
 ---
 # This playbook deploys the whole application stack in this site.
-
-- name: Copy a new pippo.conf file into place, backing up the original if it differs from the copied version
+- name: My first play to copy files
+  become: true
   hosts: all
-  copy:
-    src: /pippo.conf
-    dest: /root/pippo.conf
-    owner: root
-    group: root
-    mode: '0644'
-    backup: yes
+
+  tasks:
+
+    - name: Example copying file with owner and permissions
+      copy:
+        src: /pippo.conf
+        dest: /root/pippo.conf
+        owner: root
+        group: root
+        mode: '0644'
+        backup: yes
+
+    - name: I'm just a dummy task to show you a play can go on
+      debug:
+        msg: I'm a dummy task
