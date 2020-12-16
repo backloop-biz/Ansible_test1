@@ -1,7 +1,8 @@
 ---
 # This playbook deploys the whole application stack in this site.
 
-- name: Copy a new "pippo.conf file into place, backing up the original if it differs from the copied version
+- name: Copy a new pippo.conf file into place, backing up the original if it differs from the copied version
+  hosts: all
   copy:
     src: /pippo.conf
     dest: /root/pippo.conf
