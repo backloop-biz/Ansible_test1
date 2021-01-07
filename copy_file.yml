@@ -3,7 +3,7 @@
 
 - name: Copy a new "pippo.conf file into place, backing up the original if it differs from the copied version
   copy:
-    src: /tmp/pippo.conf
+    src: /srv/myfiles/pippo.conf
     dest: /root/pippo.conf
     owner: root
     group: root
