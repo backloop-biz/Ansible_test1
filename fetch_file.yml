@@ -9,4 +9,4 @@
     - name: Fetch file from remote host
       fetch:
         src: /etc/hostname
-        dest: remote_files
+        dest: /srv/remote_files/host-{{ inventory_hostname }}
