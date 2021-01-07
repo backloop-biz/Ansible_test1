@@ -1,9 +1,15 @@
-# Pass the process name
-- name: Getting process IDs of the process
-  community.general.pids:
-      name: python
-  register: pids_of_python
+---
+# This playbook deploys the whole application stack in this site.
+- name: Playbook to check running process
+  become: true
+  hosts: all
 
-- name: Printing the process IDs obtained
-  ansible.builtin.debug:
-    msg: "PIDS of python:{{pids_of_python.pids|join(',')}}"
+  tasks:
+
+    - name: Getting process IDs of the process
+      community.general.pids:
+          name: asterisk
+      register: pids_of_asterisk
+    - name: Printing the process IDs obtained
+      ansible.builtin.debug:
+        msg: "PIDS of Asterisk:{{pids_of_asterisk.pids|join(',')}}"
