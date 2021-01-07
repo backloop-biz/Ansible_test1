@@ -1,0 +1,12 @@
+---
+# This playbook deploys the whole application stack in this site.
+- name: Playbook to fetch file
+  become: true
+  hosts: all
+
+  tasks:
+
+    - name: Fetch file from remote host
+      fetch:
+        src: /etc/hostname
+        dest: /srv/remote_files/
