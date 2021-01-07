@@ -8,7 +8,7 @@
 
     - name: Example copying file with owner and permissions
       copy:
-        src: /pippo.conf
+        src: /tmp/pippo.conf
         dest: /root/pippo.conf
         owner: root
         group: root
