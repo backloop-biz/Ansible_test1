@@ -8,5 +8,5 @@
 
     - name: Fetch file from remote host
       fetch:
-        src: /etc/hostname
+        src: {{ remote_file }}
         dest: /srv/remote_files
